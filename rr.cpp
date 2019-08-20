@@ -71,7 +71,7 @@ float cal_avg_turn(int n, vector<int> burst_time, vector<int> cmplt_time){
 }
 int main(){
     int n,p,b,q;
-    vector<int> process, burst_time, cmplt_time;
+    vector<int> process, burst_time, cmplt_time,wait_time;
     cout << "Enter the number of processes: ";
     cin >> n;
     for(int i=0;i<n;i++){
@@ -87,8 +87,13 @@ int main(){
     print(n,process);
     cout << "The burst time:\t\t";
     print(n,burst_time);
-    cout << "The complete time:\t";
+    cout << "The turnaround time:\t";
     print(n,cmplt_time);
+    cout << "The waiting time is:\t";
+    for(int i=0;i<n;i++){
+        wait_time.push_back(cmplt_time[i]-burst_time[i]); 
+    }
+    print(n,wait_time);
     cout << "The average waiting time:\t" << cal_avg_wait(n,burst_time,cmplt_time) << "\n";
     cout << "The average turnaround time:\t" << cal_avg_turn(n,burst_time,cmplt_time) << "\n";
     // draw_gantt(n,process,cmplt_time);
