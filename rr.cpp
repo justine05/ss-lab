@@ -56,7 +56,7 @@ vector<int> cal_cmplt(int n, vector<int> process, vector<int> burst_time, int q)
 //     cout << "\n";    
 // }
 float cal_avg_wait(int n, vector<int> burst_time, vector<int> cmplt_time){
-    float sum = 0;
+    float sum = 0.0f;
     for(int i=0;i<n;i++){
         sum += cmplt_time.at(i) - burst_time.at(i);
     }
