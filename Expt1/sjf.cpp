@@ -32,33 +32,6 @@ vector<int> cal_cmplt(int n, vector<int> process, vector<int> burst_time){
     }
     return cmplt_time;
 }
-// void draw_gantt(int n, vector<int> process, vector<int> cmplt_time){
-//     float scale = 0.75;
-//     int nu = 0;
-//     for(int i=0;i<cmplt_time.back()/scale;i++)
-//         cout << "- ";
-//     cout << "\n";
-//     for(int i=0;i<cmplt_time.back()/scale;i++){
-//         if(i==0){
-//             cout << "|";
-//         }
-//         else if(i==(cmplt_time.at(nu)/(scale*2))){
-//             cout << "P" << process.at(nu) << "(" << cmplt_time.at(nu) << ")";
-//             continue;
-//         }
-//         else if(i==cmplt_time.at(nu)/scale){
-//             cout << "|";
-//             nu++;
-//         }
-//         else {
-//             cout << "  ";
-//         }
-//     } 
-//     cout << "|\n";      
-//     for(int i=0;i<cmplt_time.back()/scale;i++)
-//         cout << "- ";
-//     cout << "\n";    
-// }
 float cal_avg_wait(int n, vector<int> burst_time, vector<int> cmplt_time){
     float sum = 0.0f;
     for(int i=0;i<n;i++){
